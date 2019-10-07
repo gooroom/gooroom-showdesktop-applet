@@ -1,0 +1,22 @@
+gooroom-showdesktop-applet (0.1.0+grm1u1+dev6~1.gbp9f10fb) unstable; urgency=medium
+
+  ** SNAPSHOT build @9f10fb151d7c6685c521e6d89bf7e8e7f705a249 **
+
+  [ cjheo ]
+  * Updated #1
+  * Updated #2
+  * Change tray icon
+  * Change the install location
+
+  [ user ]
+  * Update sources regarding copyright
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Mon, 07 Oct 2019 23:29:31 +0900
+
+gooroom-showdesktop-applet (0.1.0+grm1u1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Tue, 22 Jan 2019 11:42:00 +0900

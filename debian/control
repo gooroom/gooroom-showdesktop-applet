@@ -12,9 +12,6 @@ Build-Depends: automake (>=1.13),
                libpanel-applet-dev (>= 3.24.1),
                libwnck-3-dev (>=3.4.6)
 Standards-Version: 3.9.6
-Homepage: http://www.gooroom.kr
-Vcs-Git: https://github.com/gooroom/gooroom-showdesktop-applet.git
-Vcs-Browser: https://github.com/gooroom/gooroom-showdesktop-applet
 
 Package: gooroom-showdesktop-applet
 Architecture: any

@@ -8,4 +8,4 @@ Description=Factory for Gooroom ShowDesktop Applet
 [GooroomShowDesktopApplet]
 _Name=Gooroom ShowDesktop Applet
 _Description=Showing desktop applet for GNOME panel
-Icon=user-desktop-symbolic
+Icon=show-desktop-symbolic

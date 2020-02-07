@@ -73,6 +73,9 @@ AC_SUBST(LIBPANEL_APPLET_DIR)
 AC_OUTPUT([
   Makefile
   data/Makefile
+  icons/Makefile
+  icons/scalable/Makefile
+  icons/scalable/places/Makefile
   src/Makefile
   po/Makefile.in
 ])

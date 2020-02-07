@@ -1,4 +1,5 @@
 SUBDIRS =	\
+	icons \
 	data \
 	src \
 	po

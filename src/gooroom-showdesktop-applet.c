@@ -142,7 +142,7 @@ gooroom_showdesktop_applet_init (GooroomShowDesktopApplet *applet)
 	gtk_button_set_relief (GTK_BUTTON (priv->button), GTK_RELIEF_NONE);
 	gtk_container_add (GTK_CONTAINER (applet), priv->button);
 
-	GtkWidget *tray = gtk_image_new_from_icon_name ("user-desktop-symbolic", GTK_ICON_SIZE_BUTTON);
+	GtkWidget *tray = gtk_image_new_from_icon_name ("show-desktop-symbolic", GTK_ICON_SIZE_BUTTON);
 	gtk_image_set_pixel_size (GTK_IMAGE (tray), TRAY_ICON_SIZE);
 	gtk_container_add (GTK_CONTAINER (priv->button), tray);
 

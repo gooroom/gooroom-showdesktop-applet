@@ -1,3 +1,12 @@
+gooroom-showdesktop-applet (0.1.2+grm2u1) unstable; urgency=medium
+
+  [ cjheo ]
+  * [6a65f865] 트레이 아이콘 디렉토리 추가
+
+  [ Gooroom Autobuilder ]
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Thu, 13 Feb 2020 12:51:22 +0900
+
 gooroom-showdesktop-applet (0.1.1+grm2u1) unstable; urgency=medium
 
   * Initial release.

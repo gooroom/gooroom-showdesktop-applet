@@ -1,4 +1,4 @@
-gooroomappletdir = $(pkglibdir)
+gooroomappletdir = $(GNOME_PANEL_MODULES_DIR)
 gooroomapplet_LTLIBRARIES = libgooroom-showdesktop-applet.la
 
 libgooroom_showdesktop_applet_la_CPPFLAGS = \
@@ -11,13 +11,14 @@ libgooroom_showdesktop_applet_la_CPPFLAGS = \
 
 libgooroom_showdesktop_applet_la_SOURCES = \
 	gooroom-showdesktop-applet.h	\
-	gooroom-showdesktop-applet.c
+	gooroom-showdesktop-applet.c	\
+	gooroom-showdesktop-module.c
 
 libgooroom_showdesktop_applet_la_CFLAGS = \
 	$(GLIB_CFLAGS) \
 	$(GTK_CFLAGS) \
 	$(LIBWNCK_CFLAGS) \
-	$(GNOME_APPLETS_CFLAGS) \
+	$(LIBGNOMEPANEL_CFLAGS) \
 	$(AM_CFLAGS)
 
 libgooroom_showdesktop_applet_la_LDFLAGS = \
@@ -28,4 +29,4 @@ libgooroom_showdesktop_applet_la_LIBADD = \
 	$(GLIB_LIBS) \
 	$(GTK_LIBS) \
 	$(LIBWNCK_LIBS)	\
-	$(GNOME_APPLETS_LIBS)
+	$(LIBGNOMEPANEL_LIBS)

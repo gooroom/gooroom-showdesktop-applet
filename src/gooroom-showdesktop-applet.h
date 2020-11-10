@@ -21,7 +21,7 @@
 
 G_BEGIN_DECLS
 
-#include <panel-applet.h>
+#include <libgnome-panel/gp-applet.h>
 
 #define GOOROOM_TYPE_SHOWDESKTOP_APPLET           (gooroom_showdesktop_applet_get_type ())
 #define GOOROOM_SHOWDESKTOP_APPLET(obj)           (G_TYPE_CHECK_INSTANCE_CAST ((obj), GOOROOM_TYPE_SHOWDESKTOP_APPLET, GooroomShowDesktopApplet))
@@ -35,12 +35,13 @@ typedef struct _GooroomShowDesktopAppletClass   GooroomShowDesktopAppletClass;
 typedef struct _GooroomShowDesktopAppletPrivate GooroomShowDesktopAppletPrivate;
 
 struct _GooroomShowDesktopApplet {
-	PanelApplet            parent;
+	GpApplet	parent;
 	GooroomShowDesktopAppletPrivate *priv;
 };
 
 struct _GooroomShowDesktopAppletClass {
-	PanelAppletClass parent_class;
+	//PanelAppletClass parent_class;
+	GpAppletClass	parent_class;
 };
 
 GType gooroom_showdesktop_applet_get_type (void);

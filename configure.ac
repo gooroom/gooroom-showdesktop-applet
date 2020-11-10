@@ -54,21 +54,16 @@ dnl ***********************************
 GTK_REQUIRED=3.20.0
 GLIB_REQUIRED=2.44.0
 LIBWNCK_REQUIRED=3.4.6
-LIBPANEL_REQUIRED=3.24.1
+LIBGNOME_PANEL_REQUIRED=3.38.0
 
 PKG_CHECK_MODULES(GTK, gtk+-3.0 >= $GTK_REQUIRED)
 PKG_CHECK_MODULES(GLIB, glib-2.0 >= GLIB_REQUIRED)
 PKG_CHECK_MODULES(LIBWNCK, libwnck-3.0 >= $LIBWNCK_REQUIRED)
-PKG_CHECK_MODULES(GNOME_APPLETS, libpanel-applet >= $LIBPANEL_REQUIRED)
+dnl -- check for libgnome-panel (required) ------------------------------------
+PKG_CHECK_MODULES([LIBGNOMEPANEL], [libgnome-panel >= $LIBGNOME_PANEL_REQUIRED])
 
-AC_ARG_WITH([libpanel-applet-dir], [], [LIBPANEL_APPLET_DIR=$withval], [LIBPANEL_APPLET_DIR=""])
-if test "$LIBPANEL_APPLET_DIR" == ""; then
-	LIBPANEL_APPLET_DIR=`$PKG_CONFIG --variable=libpanel_applet_dir libpanel-applet`
-fi
-
-AC_MSG_NOTICE([installing applets in $LIBPANEL_APPLET_DIR])
-AC_SUBST(LIBPANEL_APPLET_DIR)
-
+GNOME_PANEL_MODULES_DIR=`$PKG_CONFIG --variable=modulesdir libgnome-panel`
+AC_SUBST([GNOME_PANEL_MODULES_DIR], [$GNOME_PANEL_MODULES_DIR])
 
 AC_OUTPUT([
   Makefile

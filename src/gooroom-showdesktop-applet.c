@@ -24,7 +24,7 @@
 #include <gtk/gtk.h>
 #include <glib/gi18n-lib.h>
 
-#include <panel-applet.h>
+#include <libgnome-panel/gp-applet.h>
 
 #include <libwnck/libwnck.h>
 
@@ -41,7 +41,7 @@ struct _GooroomShowDesktopAppletPrivate
 
 
 
-G_DEFINE_TYPE_WITH_PRIVATE (GooroomShowDesktopApplet, gooroom_showdesktop_applet, PANEL_TYPE_APPLET)
+G_DEFINE_TYPE_WITH_PRIVATE (GooroomShowDesktopApplet, gooroom_showdesktop_applet, GP_TYPE_APPLET)
 
 
 static void
@@ -123,6 +123,25 @@ gooroom_showdesktop_applet_finalize (GObject *object)
 	G_OBJECT_CLASS (gooroom_showdesktop_applet_parent_class)->finalize (object);
 }
 
+
+static gboolean
+gooroom_showdesktop_applet_fill (GooroomShowDesktopApplet *applet)
+{
+	g_return_val_if_fail (GP_IS_APPLET (applet), FALSE);
+
+	gtk_widget_show_all (GTK_WIDGET (applet));
+
+	return TRUE;
+}
+
+static void
+gooroom_showdesktop_applet_constructed (GObject *object)
+{
+	GooroomShowDesktopApplet *applet = GOOROOM_SHOWDESKTOP_APPLET (object);
+
+	gooroom_showdesktop_applet_fill (applet);
+}
+
 static void
 gooroom_showdesktop_applet_init (GooroomShowDesktopApplet *applet)
 {
@@ -130,11 +149,7 @@ gooroom_showdesktop_applet_init (GooroomShowDesktopApplet *applet)
 
 	priv = applet->priv = gooroom_showdesktop_applet_get_instance_private (applet);
 
-	panel_applet_set_flags (PANEL_APPLET (applet), PANEL_APPLET_EXPAND_MINOR);
-
-    /* Initialize i18n */
-	bindtextdomain (GETTEXT_PACKAGE, GNOMELOCALEDIR);
-	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
+	gp_applet_set_flags (GP_APPLET (applet), GP_APPLET_FLAGS_EXPAND_MINOR);
 
 	priv->wnck_screen = wnck_screen_get_default ();
 
@@ -158,36 +173,7 @@ gooroom_showdesktop_applet_class_init (GooroomShowDesktopAppletClass *class)
 	object_class = G_OBJECT_CLASS (class);
 	widget_class = GTK_WIDGET_CLASS (class);
 
+	object_class->constructed = gooroom_showdesktop_applet_constructed;
 	object_class->finalize = gooroom_showdesktop_applet_finalize;
 	widget_class->screen_changed = gooroom_showdesktop_screen_changed;
 }
-
-static gboolean
-gooroom_showdesktop_applet_fill (GooroomShowDesktopApplet *applet)
-{
-	g_return_val_if_fail (PANEL_IS_APPLET (applet), FALSE);
-
-	GooroomShowDesktopAppletPrivate *priv = applet->priv;
-
-	gtk_widget_show_all (GTK_WIDGET (applet));
-
-	return TRUE;
-}
-
-static gboolean
-gooroom_showdesktop_applet_factory (PanelApplet *applet,
-                                    const gchar *iid,
-                                    gpointer     data)
-{
-	gboolean retval = FALSE;
-
-	if (!g_strcmp0 (iid, "GooroomShowDesktopApplet"))
-		retval = gooroom_showdesktop_applet_fill (GOOROOM_SHOWDESKTOP_APPLET (applet));
-
-	return retval;
-}
-
-PANEL_APPLET_IN_PROCESS_FACTORY ("GooroomShowDesktopAppletFactory",
-                                 GOOROOM_TYPE_SHOWDESKTOP_APPLET,
-                                 (PanelAppletFactoryCallback)gooroom_showdesktop_applet_factory,
-                                 NULL)

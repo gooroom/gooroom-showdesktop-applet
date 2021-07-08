@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2019 Gooroom <gooroom@gooroom.kr>
+ * Copyright (C) 2018-2021 Gooroom <gooroom@gooroom.kr>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -17,7 +17,7 @@
  */
 
 #ifdef HAVE_CONFIG_H
-#include "config.h"
+#include <config.h>
 #endif
 
 #include <glib.h>
@@ -28,11 +28,11 @@
 
 #include <libwnck/libwnck.h>
 
-#include "gooroom-showdesktop-applet.h"
+#include "showdesktop-applet.h"
 
 #define	TRAY_ICON_SIZE	24
 
-struct _GooroomShowDesktopAppletPrivate
+struct _GooroomShowdesktopAppletPrivate
 {
 	GtkWidget *button;
 
@@ -41,15 +41,15 @@ struct _GooroomShowDesktopAppletPrivate
 
 
 
-G_DEFINE_TYPE_WITH_PRIVATE (GooroomShowDesktopApplet, gooroom_showdesktop_applet, GP_TYPE_APPLET)
+G_DEFINE_TYPE_WITH_PRIVATE (GooroomShowdesktopApplet, gooroom_showdesktop_applet, GP_TYPE_APPLET)
 
 
 static void
 on_showing_desktop_changed (WnckScreen *wnck_screen,
                             gpointer    data)
 {
-	GooroomShowDesktopApplet *applet;
-	GooroomShowDesktopAppletPrivate *priv;
+	GooroomShowdesktopApplet *applet;
+	GooroomShowdesktopAppletPrivate *priv;
 
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->button),
 			wnck_screen_get_showing_desktop (wnck_screen));
@@ -59,8 +59,8 @@ static void
 on_applet_button_toggled (GtkToggleButton *button, gpointer data)
 {
 	gboolean a;
-	GooroomShowDesktopApplet *applet;
-	GooroomShowDesktopAppletPrivate *priv;
+	GooroomShowdesktopApplet *applet;
+	GooroomShowdesktopAppletPrivate *priv;
 
 	applet = GOOROOM_SHOWDESKTOP_APPLET (data);
 	priv = applet->priv;
@@ -77,8 +77,8 @@ gooroom_showdesktop_screen_changed (GtkWidget *widget,
 {
 	GdkScreen *screen;
 	WnckScreen *wnck_screen;
-	GooroomShowDesktopApplet *applet;
-	GooroomShowDesktopAppletPrivate *priv;
+	GooroomShowdesktopApplet *applet;
+	GooroomShowdesktopAppletPrivate *priv;
 
 	applet = GOOROOM_SHOWDESKTOP_APPLET (widget);
 	priv = applet->priv;
@@ -111,8 +111,8 @@ G_GNUC_END_IGNORE_DEPRECATIONS
 static void
 gooroom_showdesktop_applet_finalize (GObject *object)
 {
-	GooroomShowDesktopApplet *applet = GOOROOM_SHOWDESKTOP_APPLET (object);
-	GooroomShowDesktopAppletPrivate *priv = applet->priv;
+	GooroomShowdesktopApplet *applet = GOOROOM_SHOWDESKTOP_APPLET (object);
+	GooroomShowdesktopAppletPrivate *priv = applet->priv;
 
 	g_signal_handlers_disconnect_by_func (G_OBJECT (priv->wnck_screen),gooroom_showdesktop_screen_changed, applet);
 
@@ -125,7 +125,7 @@ gooroom_showdesktop_applet_finalize (GObject *object)
 
 
 static gboolean
-gooroom_showdesktop_applet_fill (GooroomShowDesktopApplet *applet)
+gooroom_showdesktop_applet_fill (GooroomShowdesktopApplet *applet)
 {
 	g_return_val_if_fail (GP_IS_APPLET (applet), FALSE);
 
@@ -137,15 +137,15 @@ gooroom_showdesktop_applet_fill (GooroomShowDesktopApplet *applet)
 static void
 gooroom_showdesktop_applet_constructed (GObject *object)
 {
-	GooroomShowDesktopApplet *applet = GOOROOM_SHOWDESKTOP_APPLET (object);
+	GooroomShowdesktopApplet *applet = GOOROOM_SHOWDESKTOP_APPLET (object);
 
 	gooroom_showdesktop_applet_fill (applet);
 }
 
 static void
-gooroom_showdesktop_applet_init (GooroomShowDesktopApplet *applet)
+gooroom_showdesktop_applet_init (GooroomShowdesktopApplet *applet)
 {
-	GooroomShowDesktopAppletPrivate *priv;
+	GooroomShowdesktopAppletPrivate *priv;
 
 	priv = applet->priv = gooroom_showdesktop_applet_get_instance_private (applet);
 
@@ -157,7 +157,8 @@ gooroom_showdesktop_applet_init (GooroomShowDesktopApplet *applet)
 	gtk_button_set_relief (GTK_BUTTON (priv->button), GTK_RELIEF_NONE);
 	gtk_container_add (GTK_CONTAINER (applet), priv->button);
 
-	GtkWidget *tray = gtk_image_new_from_icon_name ("show-desktop-symbolic", GTK_ICON_SIZE_BUTTON);
+	GtkWidget *tray = gtk_image_new_from_icon_name ("gooroom-showdesktop-symbolic",
+                                                    GTK_ICON_SIZE_BUTTON);
 	gtk_image_set_pixel_size (GTK_IMAGE (tray), TRAY_ICON_SIZE);
 	gtk_container_add (GTK_CONTAINER (priv->button), tray);
 
@@ -165,7 +166,7 @@ gooroom_showdesktop_applet_init (GooroomShowDesktopApplet *applet)
 }
 
 static void
-gooroom_showdesktop_applet_class_init (GooroomShowDesktopAppletClass *class)
+gooroom_showdesktop_applet_class_init (GooroomShowdesktopAppletClass *class)
 {
 	GObjectClass *object_class;
 	GtkWidgetClass *widget_class;

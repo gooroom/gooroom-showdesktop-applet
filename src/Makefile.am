@@ -10,9 +10,9 @@ libgooroom_showdesktop_applet_la_CPPFLAGS = \
 	-DGDK_DISABLE_DEPRECATED
 
 libgooroom_showdesktop_applet_la_SOURCES = \
-	gooroom-showdesktop-applet.h	\
-	gooroom-showdesktop-applet.c	\
-	gooroom-showdesktop-module.c
+	showdesktop-applet-module.c \
+	showdesktop-applet.h \
+	showdesktop-applet.c
 
 libgooroom_showdesktop_applet_la_CFLAGS = \
 	$(GLIB_CFLAGS) \

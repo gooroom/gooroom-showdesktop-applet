@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018-2019 Gooroom <gooroom@gooroom.kr>
+ * Copyright (C) 2018-2021 Gooroom <gooroom@gooroom.kr>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as
@@ -24,24 +24,23 @@ G_BEGIN_DECLS
 #include <libgnome-panel/gp-applet.h>
 
 #define GOOROOM_TYPE_SHOWDESKTOP_APPLET           (gooroom_showdesktop_applet_get_type ())
-#define GOOROOM_SHOWDESKTOP_APPLET(obj)           (G_TYPE_CHECK_INSTANCE_CAST ((obj), GOOROOM_TYPE_SHOWDESKTOP_APPLET, GooroomShowDesktopApplet))
-#define GOOROOM_SHOWDESKTOP_APPLET_CLASS(obj)     (G_TYPE_CHECK_CLASS_CAST    ((obj), GOOROOM_TYPE_SHOWDESKTOP_APPLET, GooroomShowDesktopAppletClass))
+#define GOOROOM_SHOWDESKTOP_APPLET(obj)           (G_TYPE_CHECK_INSTANCE_CAST ((obj), GOOROOM_TYPE_SHOWDESKTOP_APPLET, GooroomShowdesktopApplet))
+#define GOOROOM_SHOWDESKTOP_APPLET_CLASS(obj)     (G_TYPE_CHECK_CLASS_CAST    ((obj), GOOROOM_TYPE_SHOWDESKTOP_APPLET, GooroomShowdesktopAppletClass))
 #define GOOROOM_IS_SHOWDESKTOP_APPLET(obj)        (G_TYPE_CHECK_INSTANCE_TYPE ((obj), GOOROOM_TYPE_SHOWDESKTOP_APPLET))
 #define GOOROOM_IS_SHOWDESKTOP_APPLET_CLASS(obj)  (G_TYPE_CHECK_CLASS_TYPE    ((obj), GOOROOM_TYPE_SHOWDESKTOP_APPLET))
-#define GOOROOM_SHOWDESKTOP_APPLET_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS  ((obj), GOOROOM_TYPE_SHOWDESKTOP_APPLET, GooroomShowDesktopAppletClass))
+#define GOOROOM_SHOWDESKTOP_APPLET_GET_CLASS(obj) (G_TYPE_INSTANCE_GET_CLASS  ((obj), GOOROOM_TYPE_SHOWDESKTOP_APPLET, GooroomShowdesktopAppletClass))
 
-typedef struct _GooroomShowDesktopApplet        GooroomShowDesktopApplet;
-typedef struct _GooroomShowDesktopAppletClass   GooroomShowDesktopAppletClass;
-typedef struct _GooroomShowDesktopAppletPrivate GooroomShowDesktopAppletPrivate;
+typedef struct _GooroomShowdesktopApplet        GooroomShowdesktopApplet;
+typedef struct _GooroomShowdesktopAppletClass   GooroomShowdesktopAppletClass;
+typedef struct _GooroomShowdesktopAppletPrivate GooroomShowdesktopAppletPrivate;
 
-struct _GooroomShowDesktopApplet {
-	GpApplet	parent;
-	GooroomShowDesktopAppletPrivate *priv;
+struct _GooroomShowdesktopApplet {
+	GpApplet parent;
+	GooroomShowdesktopAppletPrivate *priv;
 };
 
-struct _GooroomShowDesktopAppletClass {
-	//PanelAppletClass parent_class;
-	GpAppletClass	parent_class;
+struct _GooroomShowdesktopAppletClass {
+	GpAppletClass parent_class;
 };
 
 GType gooroom_showdesktop_applet_get_type (void);

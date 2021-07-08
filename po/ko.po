@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: gooroom-showdesktop-applet 0.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-22 12:52+0900\n"
+"POT-Creation-Date: 2021-07-08 11:37+0900\n"
 "PO-Revision-Date: 2019-01-22 12:54+0900\n"
 "Language-Team: Gooroom <gooroom@gooroom.kr>\n"
 "Language: ko\n"
@@ -15,10 +15,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../data/kr.gooroom.ShowDesktopApplet.panel-applet.in.in.h:1
-msgid "Gooroom ShowDesktop Applet"
+#: ../src/showdesktop-applet-module.c:35
+msgid "Gooroom Showdesktop Applet"
 msgstr "구름 바탕화면 표시 애플릿"
 
-#: ../data/kr.gooroom.ShowDesktopApplet.panel-applet.in.in.h:2
+#: ../src/showdesktop-applet-module.c:36
 msgid "Showing desktop applet for GNOME panel"
 msgstr "GNOME 패널용 바탕화면 표시 애플릿"

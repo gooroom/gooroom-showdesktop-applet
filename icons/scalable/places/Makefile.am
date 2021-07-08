@@ -1,3 +1,3 @@
 iconsdir = $(datadir)/icons/hicolor/scalable/places
-icons_DATA = show-desktop-symbolic.svg
+icons_DATA = gooroom-showdesktop-symbolic.svg
 EXTRA_DIST = $(icons_DATA)

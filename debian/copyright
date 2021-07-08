@@ -2,7 +2,7 @@ Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Source: https://github.com/gooroom/gooroom-showdesktop-applet/
 
 Files: *
-Copyright: 2018-2019 gooroom <gooroom@gooroom.kr>
+Copyright: 2018-2021 Gooroom <gooroom@gooroom.kr>
 License: GPL-2.0+
  This package is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by

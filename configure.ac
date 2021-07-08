@@ -67,7 +67,6 @@ AC_SUBST([GNOME_PANEL_MODULES_DIR], [$GNOME_PANEL_MODULES_DIR])
 
 AC_OUTPUT([
   Makefile
-  data/Makefile
   icons/Makefile
   icons/scalable/Makefile
   icons/scalable/places/Makefile

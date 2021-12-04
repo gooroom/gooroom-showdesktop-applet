@@ -1,3 +1,13 @@
+gooroom-showdesktop-applet (0.2.0+grm3u1) unstable; urgency=medium
+
+  [ subin.kim ]
+  * [75a82473] porting to gooroom-3.0
+
+  [ cjheo ]
+  * [c80627f8] Rebase for Gooroom-3.0
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Sat, 04 Dec 2021 20:50:04 +0900
+
 gooroom-showdesktop-applet (0.1.2+grm2u1) unstable; urgency=medium
 
   [ cjheo ]

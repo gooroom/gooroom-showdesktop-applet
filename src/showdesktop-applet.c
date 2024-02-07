@@ -51,6 +51,9 @@ on_showing_desktop_changed (WnckScreen *wnck_screen,
 	GooroomShowdesktopApplet *applet;
 	GooroomShowdesktopAppletPrivate *priv;
 
+	applet = GOOROOM_SHOWDESKTOP_APPLET (data);
+	priv = applet->priv;
+
 	gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (priv->button),
 			wnck_screen_get_showing_desktop (wnck_screen));
 }

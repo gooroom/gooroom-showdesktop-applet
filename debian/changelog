@@ -1,3 +1,13 @@
+gooroom-showdesktop-applet (4.0.0+grm4u1) unstable; urgency=medium
+
+  [ jongkyung.woo ]
+  * [f08bd532] Rebuild on gooroom-4.0
+
+  [ cjheo ]
+  * [bd0c82ae] Fixed bug for missing variable initialization
+
+ -- Gooroom Autobuilder <jenkins@gooroom.kr>  Mon, 11 Mar 2024 09:29:33 +0900
+
 gooroom-showdesktop-applet (0.2.0+grm3u1) unstable; urgency=medium
 
   [ subin.kim ]

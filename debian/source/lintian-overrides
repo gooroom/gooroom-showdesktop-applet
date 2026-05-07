@@ -1,0 +1,4 @@
+gooroom-showdesktop-applet source: no-nmu-in-changelog
+gooroom-showdesktop-applet source: source-nmu-has-incorrect-version-number
+gooroom-showdesktop-applet source: latest-debian-changelog-entry-without-new-date
+gooroom-showdesktop-applet source: unknown-field Original-Maintainer
